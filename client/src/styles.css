@@ -296,6 +296,36 @@ section:not(.invite) { width: min(100% - 32px, 560px); margin: 0 auto; padding: 
 .btn:disabled { opacity: .6; cursor: progress; }
 .btn-ghost { background: transparent; color: var(--gold-hi); border-color: var(--line); box-shadow: none; }
 .btn-wide { width: 100%; margin-top: 0.6rem; }
+/* ===== Madhuram Vaippu ===== */
+.madhuram { padding-top: 24px !important; }
+.madhuram-card {
+  position: relative; text-align: center; padding: 40px 22px 34px;
+  border: 1px solid var(--line); border-radius: 200px 200px 10px 10px;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(214, 160, 70, .14), transparent 70%),
+    rgba(10, 8, 6, .6);
+}
+.madhuram-card::before { /* inner hairline arch */
+  content: ""; position: absolute; inset: 7px; pointer-events: none;
+  border: 1px solid rgba(214, 180, 106, .2); border-radius: 194px 194px 6px 6px;
+}
+.madhuram-eyebrow { margin: 0 0 .2rem; font: 400 .74rem var(--caps); letter-spacing: .34em; padding-left: .34em; color: var(--gold); }
+.madhuram-sub { margin: 0; font-style: italic; color: var(--muted); }
+.madhuram-date {
+  display: flex; flex-direction: column; align-items: center; margin: 1.4rem auto 1.2rem;
+  padding: 14px 0; width: min(100%, 260px);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.md-day { font: 500 .8rem var(--caps); letter-spacing: .4em; padding-left: .4em; color: var(--gold); }
+.md-num {
+  font: 500 3.6rem/1.05 var(--caps);
+  background: var(--gold-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.md-month { font: 500 .9rem var(--caps); letter-spacing: .22em; padding-left: .22em; }
+.madhuram-info { display: grid; gap: 10px; justify-content: center; }
+.madhuram-info p { margin: 0; display: flex; align-items: center; gap: 10px; text-align: start; font: 400 .8rem/1.6 var(--caps); letter-spacing: .1em; }
+.madhuram-info .icon { width: 24px; height: 24px; flex: none; }
+.madhuram .detail-actions { margin-top: 1.6rem; }
 
 /* ===== Families ===== */
 .families { text-align: center; }

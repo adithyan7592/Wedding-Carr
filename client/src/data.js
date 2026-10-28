@@ -6,7 +6,7 @@ export const EVENT = {
   verse: "So they are no longer two, but one flesh.",
   verseRef: "Matthew 19:6",
   brideParents: "Joy P.V. & Sindhu Joy",
-  brideHouse: "Pollayil House, Alangad P.O. 683511",
+  brideHouse: "Pollayil House, Alangad P.O.",
   groomParents: "Jacob K. Devassy & Bini Jacob",
   groomHouse: "Kudiyirikal House, St. Mary’s Road, Puthanvelikara P.O., Puthanvelikara",
   siblings: ["Jimsy Joy", "Jasmi Joy", "Don Joy"],
@@ -29,6 +29,31 @@ export const calendarUrl = () => {
     dates: "20261129T063000Z/20261129T090000Z",
     details: "With love from the families of Joy P.V. and Jacob K. Devassy",
     location: `${EVENT.venue}, ${EVENT.venueArea}, Kerala`,
+  });
+  return `https://calendar.google.com/calendar/render?${p}`;
+};
+
+// Madhuram Vaippu — the day before the engagement
+export const MADHURAM = {
+  title: "Madhuram Vaippu",
+  subtitle: "The sweet ceremony of Jancy",
+  day: "Saturday",
+  dateNum: "28",
+  month: "November",
+  year: "2026",
+  time: "",                       // e.g. "5:00 PM" — leave empty to hide the time
+  venue: "Pollayil House",
+  venueArea: "Alangad P.O. 683511",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Pollayil+House+Alangad+Kerala",
+};
+
+export const madhuramCalendarUrl = () => {
+  const p = new URLSearchParams({
+    action: "TEMPLATE",
+    text: `${MADHURAM.title} · Jancy`,
+    dates: "20261128/20261129", // all-day; change if you add a time
+    details: "Madhuram Vaippu ceremony of Jancy Joy",
+    location: `${MADHURAM.venue}, ${MADHURAM.venueArea}, Kerala`,
   });
   return `https://calendar.google.com/calendar/render?${p}`;
 };

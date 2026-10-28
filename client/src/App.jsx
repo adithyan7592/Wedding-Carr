@@ -11,6 +11,7 @@ import Footer from "./components/Footer.jsx";
 import { GoldDefs } from "./components/Ornaments.jsx";
 import useReveal from "./lib/useReveal.js";
 import MusicButton from "./components/MusicButton.jsx";
+import Madhuram from "./components/Madhuram.jsx";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -32,6 +33,7 @@ export default function App() {
         <Invitation />
         <ScratchHeart />
         <Details />
+         <Madhuram />
         <Families />
         <Rsvp />
         <Wishes />
