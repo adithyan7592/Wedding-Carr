@@ -106,7 +106,7 @@ export default function ScratchHeart() {
 
   return (
     <section className="date-section" id="date" aria-labelledby="date-title">
-      <h2 id="date-title" className="section-script" data-reveal>Save our date</h2>
+      <h2 id="date-title" className="section-script" data-reveal>We’re Getting Engaged!</h2>
       <p className="section-note" data-reveal>
         {revealed ? "We can’t wait to see you there." : "Scratch the golden heart with your finger"}
       </p>

@@ -164,7 +164,7 @@ main { position: relative; z-index: 2; }
 }
 .section-script {
   font: 400 clamp(2.5rem, 11vw, 3.6rem)/1.15 var(--script); margin: 0 0 0.3rem; text-align: center;
-  padding: 0 0.2em;
+  padding: 0 0.2em; text-wrap: balance;
 }
 .section-note { text-align: center; color: var(--muted); font-style: italic; margin: 0 0 1.6rem; }
 .parents { font: 500 1.35rem/1.35 var(--caps); letter-spacing: 0.06em; margin: 0.4rem 0 0.2rem; }
