@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { WaxSeal } from "./Ornaments.jsx";
 import { LaceDefs, Flap, LaceCard, SEAL } from "./Lace.jsx";
 import { burst, haptic } from "../lib/fx.js";
+import { startMusic } from "../lib/music.js";
 
 // Sheer black lace envelope. Tap: the seal presses, the top flap (with the
 // seal) glides up, the side and bottom flaps slide away, leaving a lace oval.
@@ -12,6 +13,7 @@ export default function Envelope({ onOpen }) {
 
   const open = () => {
     if (stage !== "closed") return;
+    startMusic(); 
     haptic(20);
     setStage("press");
     const r = sealRef.current?.getBoundingClientRect();

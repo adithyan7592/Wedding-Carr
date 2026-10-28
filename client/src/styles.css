@@ -348,6 +348,28 @@ section:not(.invite) { width: min(100% - 32px, 560px); margin: 0 auto; padding: 
 .wish p { margin: 0 0 .8rem; font-style: italic; font-size: 1.15rem; line-height: 1.45; }
 .wish span { font: 400 .74rem var(--caps); letter-spacing: .2em; color: var(--gold); }
 .wish.fresh { animation: rise .8s var(--ease); }
+/* ===== Music button ===== */
+.music-btn {
+  position: fixed; z-index: 150;
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center; cursor: pointer;
+  color: #2a1b08; border: 1px solid rgba(255, 240, 200, .5);
+  background: radial-gradient(circle at 35% 30%, #fbeec6, #d6b46a 55%, #a57a34);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .55), 0 0 0 4px rgba(214, 180, 106, .12);
+  opacity: 0; transform: translateY(16px) scale(.8); pointer-events: none;
+  transition: opacity .6s ease 1.2s, transform .6s var(--ease) 1.2s;
+}
+.music-btn.show { opacity: 1; transform: none; pointer-events: auto; }
+.music-btn:active { transform: scale(.94); }
+.music-btn svg { width: 22px; height: 22px; }
+.music-btn .bars { display: flex; align-items: flex-end; gap: 3px; height: 18px; }
+.music-btn .bars i { width: 3px; height: 100%; border-radius: 2px; background: #3a2508; transform-origin: bottom; animation: bar 1.1s ease-in-out infinite; }
+.music-btn .bars i:nth-child(2) { animation-delay: -.3s; }
+.music-btn .bars i:nth-child(3) { animation-delay: -.6s; }
+.music-btn .bars i:nth-child(4) { animation-delay: -.9s; }
+@keyframes bar { 0%, 100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
 
 /* ===== Footer ===== */
 .footer { position: relative; z-index: 2; text-align: center; padding: 40px 20px 72px; }

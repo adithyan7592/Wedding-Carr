@@ -10,6 +10,7 @@ import Wishes from "./components/Wishes.jsx";
 import Footer from "./components/Footer.jsx";
 import { GoldDefs } from "./components/Ornaments.jsx";
 import useReveal from "./lib/useReveal.js";
+import MusicButton from "./components/MusicButton.jsx";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -26,6 +27,7 @@ export default function App() {
       <div className="bokeh" aria-hidden="true" />
       <Blossoms active={open} />
       <Envelope onOpen={() => setOpen(true)} />
+        <MusicButton visible={open} />
       <main aria-hidden={!open}>
         <Invitation />
         <ScratchHeart />
