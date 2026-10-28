@@ -179,10 +179,11 @@ main { position: relative; z-index: 2; }
 .invite { min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: 22px 14px 40px; }
 .invite-frame {
   position: relative; overflow: visible; width: 100%; max-width: 560px; text-align: center;
-  padding: 56px 22px 46px;
+  padding: 64px 22px 56px;
   border: 1px solid var(--line);
   outline: 1px solid rgba(214,180,106,.22); outline-offset: -7px;
   background: linear-gradient(180deg, rgba(10,8,6,.7), rgba(10,8,6,.5));
+  isolation: isolate; /* lets the sprigs sit behind the text but above the frame */
 }
 .cross { width: 30px; height: 42px; display: block; margin: 0 auto 0.8rem; }
 .verse { margin: 0 auto; max-width: 18em; font-style: italic; font-size: 1.2rem; line-height: 1.4; color: var(--cream); }
@@ -201,9 +202,10 @@ main { position: relative; z-index: 2; }
 .son-of { margin: 0.6rem 0 0; color: var(--muted); font-style: italic; }
 .invite-frame > .house:last-of-type { max-width: 22em; margin-inline: auto; }
 
-.sprig { position: absolute; width: clamp(110px, 32vw, 190px); height: auto; pointer-events: none; opacity: .9; }
-.sprig-tl { top: -16px; left: -16px; transform-origin: center; transform: scaleY(-1); }
-.sprig-br { bottom: -16px; right: -16px; transform-origin: center; transform: scaleX(-1); }
+/* Corner sprigs: small, tucked into the corners and drawn BEHIND the text */
+.sprig { position: absolute; z-index: -1; width: clamp(64px, 18vw, 110px); height: auto; pointer-events: none; opacity: .85; }
+.sprig-tl { top: -10px; left: -10px; transform-origin: center; transform: scaleY(-1); }
+.sprig-br { bottom: -10px; right: -10px; transform-origin: center; transform: scaleX(-1); }
 .is-open .sprig-tl { animation: swayTL 7s ease-in-out infinite alternate; }
 .is-open .sprig-br { animation: swayBR 8s ease-in-out infinite alternate; }
 @keyframes swayTL { from { transform: scaleY(-1) rotate(0deg); } to { transform: scaleY(-1) rotate(-3deg); } }
@@ -381,7 +383,7 @@ section:not(.invite) { width: min(100% - 32px, 560px); margin: 0 auto; padding: 
 
 @media (min-width: 720px) {
   body { font-size: 1.25rem; }
-  .invite-frame { padding: 70px 48px 56px; }
+    .invite-frame { padding: 80px 56px 64px; }
   .detail p { font-size: .86rem; }
 }
 
