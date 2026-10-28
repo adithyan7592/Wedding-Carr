@@ -35,10 +35,10 @@ export const calendarUrl = () => {
 
 // Madhuram Vaippu — the day before the engagement
 export const MADHURAM = {
-  title: "Madhuram Vaippu",
+  title: "Madhuram Veppu",
   subtitle: "The sweet ceremony of Jancy",
-  day: "Saturday",
-  dateNum: "28",
+    day: "Wednesday",
+  dateNum: "25",
   month: "November",
   year: "2026",
   time: "",                       // e.g. "5:00 PM" — leave empty to hide the time
@@ -51,8 +51,8 @@ export const madhuramCalendarUrl = () => {
   const p = new URLSearchParams({
     action: "TEMPLATE",
     text: `${MADHURAM.title} · Jancy`,
-    dates: "20261128/20261129", // all-day; change if you add a time
-    details: "Madhuram Vaippu ceremony of Jancy Joy",
+   dates: "20261125/20261126", // all-day; change if you add a time
+    details: "Madhuram Veppu ceremony of Jancy Joy",
     location: `${MADHURAM.venue}, ${MADHURAM.venueArea}, Kerala`,
   });
   return `https://calendar.google.com/calendar/render?${p}`;

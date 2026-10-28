@@ -7,7 +7,7 @@ export default function Madhuram() {
   return (
     <section className="madhuram" aria-labelledby="madhuram-title">
       <div className="madhuram-card" data-reveal>
-        <p className="madhuram-eyebrow">The day before</p>
+        <p className="madhuram-eyebrow">Before the engagement</p>
         <h2 id="madhuram-title" className="section-script">{m.title}</h2>
         <p className="madhuram-sub">{m.subtitle}</p>
 
