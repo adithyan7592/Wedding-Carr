@@ -26,6 +26,9 @@
 *, *::before, *::after { box-sizing: inherit; }
 html { scrollbar-gutter: stable; scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
 html.locked, html.locked body { overflow: hidden; height: 100%; }
+/* never allow sideways scrolling on phones (clip doesn't break position: sticky/fixed) */
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
 body {
   margin: 0;
   background: var(--ink);
@@ -75,7 +78,7 @@ main { position: relative; z-index: 2; }
 /* Phone: the envelope fills the screen. lvh keeps it the same size when the
    browser bar shows/hides, so the lace never shifts sideways. */
 .env-stage {
-  position: relative; overflow: hidden;
+  position: relative; overflow: hidden; container-type: size;
   width: 100vw; height: 100vh; height: 100lvh;
 }
 /* Tablet / desktop: a tall envelope card centred on a dark backdrop.
@@ -125,12 +128,12 @@ main { position: relative; z-index: 2; }
 .env-names {
   position: absolute; left: 0; right: 0; top: 46.5%; margin: 0; text-align: center;
   text-shadow: 0 1px 4px #000;
-  font: 400 .8rem/1 var(--caps); letter-spacing: .42em; padding-left: .42em; color: rgba(214, 180, 106, .85);
-  transition: opacity .4s ease;
+  font: 400 clamp(.5rem, 3.1cqw, .8rem)/1 var(--caps); letter-spacing: .42em; padding-left: .42em; color: rgba(214, 180, 106, .85);
+  white-space: nowrap; transition: opacity .4s ease;
 }
 .open-hint {
-  position: absolute; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 36px);
-  margin: 0; text-align: center; font: italic 400 1.15rem var(--serif); color: var(--cream);
+  position: absolute; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 4.5cqh);
+  margin: 0; text-align: center; font: italic 400 clamp(.85rem, 4.4cqw, 1.15rem) var(--serif); color: var(--cream);
   text-shadow: 0 1px 6px #000; animation: breathe 2.4s ease-in-out infinite; transition: opacity .4s;
 }
 @keyframes breathe { 50% { opacity: .5; } }
@@ -199,8 +202,8 @@ main { position: relative; z-index: 2; }
 .invite-frame > .house:last-of-type { max-width: 22em; margin-inline: auto; }
 
 .sprig { position: absolute; width: clamp(110px, 32vw, 190px); height: auto; pointer-events: none; opacity: .9; }
-.sprig-tl { top: -16px; left: -16px; transform-origin: 0% 0%; transform: scaleY(-1); }
-.sprig-br { bottom: -16px; right: -16px; transform-origin: 100% 100%; transform: scaleX(-1); }
+.sprig-tl { top: -16px; left: -16px; transform-origin: center; transform: scaleY(-1); }
+.sprig-br { bottom: -16px; right: -16px; transform-origin: center; transform: scaleX(-1); }
 .is-open .sprig-tl { animation: swayTL 7s ease-in-out infinite alternate; }
 .is-open .sprig-br { animation: swayBR 8s ease-in-out infinite alternate; }
 @keyframes swayTL { from { transform: scaleY(-1) rotate(0deg); } to { transform: scaleY(-1) rotate(-3deg); } }
