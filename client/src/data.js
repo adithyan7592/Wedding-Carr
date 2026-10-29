@@ -9,7 +9,7 @@ export const EVENT = {
   brideHouse: "Pollayil House, Alangad P.O.",
   groomParents: "Jacob K. Devassy & Bini Jacob",
   groomHouse: "Kudiyirikal House, St. Mary’s Road, Puthanvelikara P.O., Puthanvelikara",
-  siblings: ["Jimsy Joy", "Jasmi Joy", "Don Joy"],
+  siblings: ["Jimsy Joy", "Jasmi Joy", "Don Joy", "Rejin Davis"],
   withLove: "Ryan Luke",
   dateISO: "2026-11-29T12:00:00+05:30",
   day: "Sunday",
