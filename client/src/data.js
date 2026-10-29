@@ -44,7 +44,7 @@ export const MADHURAM = {
   time: "",                       // e.g. "5:00 PM" — leave empty to hide the time
   venue: "Pollayil House",
   venueArea: "Alangad P.O. 683511",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Pollayil+House+Alangad+Kerala",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=10.124469,76.297191",
 };
 
 export const madhuramCalendarUrl = () => {
